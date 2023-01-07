@@ -36,19 +36,63 @@ class TemplateBasics {
 
                 <ul class="nav nav-dark col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
-                    <?php
-                    // vypis menu
-                    foreach(WEB_PAGES as $key => $pInfo){
-                        echo "<li><a href='index.php?page=$key' class='nav-link px-2 link-secondary'>$pInfo[title]</a></li>";
+                    <li><a href='index.php?page=uvod' class='nav-link px-2 link-secondary'>Úvod</a></li>
 
-                    }
+
+                    <?php
+                        if(mySession::isActive('id')){
+
+                            if(mySession::get('vaha') == 1){
+
+                                echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidat článek</a></li>";
+                            }
+
+                            if(mySession::get('vaha') == 2){
+
+                                echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
+                                echo "<li><a href='index.php?page=recenze' class='nav-link px-2 link-secondary'>Recenze</a></li>";
+                            }
+
+                            elseif(mySession::get('vaha') == 3){
+
+                                echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
+                                echo "<li><a href='index.php?page=pridelenirecenzi' class='nav-link px-2 link-secondary'>Přidělení recenzí</a></li>";
+                                echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Správa uživatelů</a></li>";
+                            }
+
+                            elseif(mySession::get('vaha') == 4){
+
+                                echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
+                                echo "<li><a href='index.php?page=recenze' class='nav-link px-2 link-secondary'>Recenze</a></li>";
+                                echo "<li><a href='index.php?page=pridelenirecenzi' class='nav-link px-2 link-secondary'>Přidělení recenzí</a></li>";
+                                echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Správa uživatelů</a></li>";
+                            }
+                        }
                     ?>
                 </ul>
 
                 <div class="col-md-3 text-end">
-                    <button type="button" onclick="window.location.href='index.php?page=prihlaseni'" class="btn btn-outline-primary me-2">Přihlášení</button>
 
-                    <button type="button" onclick="window.location.href='index.php?page=registrace'" class="btn btn-primary">Registrace</button>
+                    <?php
+                        if(mySession::isActive('id')){
+
+                            echo mySession::get('login')." ".mySession::get('nazev');
+
+                            ?>
+
+                            <button type="button" onclick="window.location.href='index.php?page=odhlaseni'" class="btn btn-primary">Odhlásit se</button>
+
+                        <?php
+                            }
+                        else{
+                         ?>
+                            <button type="button" onclick="window.location.href='index.php?page=prihlaseni'" class="btn btn-outline-primary me-2">Přihlášení</button>
+
+                            <button type="button" onclick="window.location.href='index.php?page=registrace'" class="btn btn-primary">Registrace</button>
+                     <?php
+                        }
+                     ?>
+
                 </div>
             </header>
         </div>

@@ -9,7 +9,7 @@ class mySession{
         $_SESSION[$key] = $value;
     }
 
-    public static function isSet($key):bool{
+    public static function isActive($key):bool{
         return isset($_SESSION[$key]);
     }
 
@@ -20,11 +20,11 @@ class mySession{
         return null;
     }
 
-    public static function unset($key){
+    public static function unSet($key){
         unset($_SESSION[$key]);
     }
 
-    public static function destroy(){
+    public static function stop(){
         session_destroy();
     }
 }

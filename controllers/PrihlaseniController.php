@@ -9,17 +9,20 @@ class PrihlaseniController implements IController
     public function __construct()
     {
 
-        require_once(DIRECTORY_MODELS . "DatabaseModel.php");
-        $this->db = new DatabaseModel();
+        require_once(DIRECTORY_MODELS . "PrihlaseniModel.php");
+        $this->db = new PrihlaseniModel();
     }
 
     public function show(string $pageTitle): string
     {
 
         global $tplData;
-
         $tplData = [];
         $tplData['title'] = $pageTitle;
+
+        if(isset($_POST["loginSubmit"])){
+            $tplData['loginResult'] = $this->db->login();
+        }
 
         ob_start();
 

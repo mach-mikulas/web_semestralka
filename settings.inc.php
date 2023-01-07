@@ -58,26 +58,23 @@ const WEB_PAGES = array(
         "class_name" => "RegistraceController",
     ),
 
-    //TODO
-    "recenze" => array(
+    "odhlaseni" => array(
 
-        "title" => "Recenze",
-
-        //Kontroler
-        "file_name" => "RecenzeController.php",
-        "class_name" => "RecenzeController",
-    ),
-
-    //TODO
-    "spravarecenzi" => array(
-
-        "title" => "Recenze",
+        "title" => "Odhlášení",
 
         //Kontroler
-        "file_name" => "SpravaRecenziController.php",
-        "class_name" => "SpravaRecenziController",
+        "file_name" => "OdhlaseniController.php",
+        "class_name" => "OdhlaseniController",
     ),
 
+    "pridaniclanku" => array(
+
+        "title" => "Přidání článku",
+
+        //Kontroler
+        "file_name" => "PridaniClankuController.php",
+        "class_name" => "PridaniClankuController",
+    ),
 
 );
 

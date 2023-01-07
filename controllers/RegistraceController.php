@@ -10,8 +10,8 @@ class RegistraceController implements IController
     public function __construct()
     {
         // inicializace prace s DB
-        require_once(DIRECTORY_MODELS . "DatabaseModel.php");
-        $this->db = new DatabaseModel();
+        require_once(DIRECTORY_MODELS."RegistraceModel.php");
+        $this->db = new RegistraceModel();
     }
 
     /**
@@ -26,9 +26,16 @@ class RegistraceController implements IController
         $tplData = [];
         $tplData['title'] = $pageTitle;
 
+        if(isset($_POST["registerSubmit"])){
+            $tplData['registerResult'] = $this->db->register();
+        }
+
+
+
         ob_start();
 
-        require(DIRECTORY_VIEWS ."RegistraceTemplate.php");
+        require(DIRECTORY_VIEWS."RegistraceTemplate.php");
+
         $obsah = ob_get_clean();
 
         return $obsah;

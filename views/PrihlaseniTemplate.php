@@ -16,8 +16,36 @@ $tplHeaders->getHTMLHeader($tplData['title']);
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card border-0 shadow rounded-3 my-5">
                     <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5">Přihlášení</h5>
-                        <form>
+                        <h1 class="card-title text-center mb-5 fw-light fs-5"><b>Přihlášení</b></h1>
+
+                        <?php
+                        if (isset($tplData['loginResult'])) {
+                            if ($tplData['loginResult'] == 0) { ?>
+                                <div class="alert alert-success text-center" role="alert">
+                                    <b>Přihlášení proběhlo úspěšně.</b>
+                                </div>
+                                <?php
+                            } else if ($tplData['loginResult'] == 1) { ?>
+                                <div class="alert alert-danger text-center" role="alert">
+                                    <b>Přihlášení neproběhla úspěšně.</b>
+                                    <p>Špatné přihlašovací jméno neho heslo.</p>
+                                </div>
+
+                                <?php
+                            } else if ($tplData['loginResult'] == 2) { ?>
+                                <div class="alert alert-danger text-center" role="alert">
+                                    <b>ERROR</b>
+                                    <p>CHYBA Databáze</p>
+                                </div>
+
+
+                                <?php
+                            }
+                        } ?>
+
+
+
+                        <form method="post">
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" required="required" id="floatingInput" name="loginLogin" placeholder="Přihlašovací jméno">
@@ -35,7 +63,7 @@ $tplHeaders->getHTMLHeader($tplData['title']);
                                 </label>
                             </div>
                             <div class="d-grid">
-                                <button class="btn btn-primary" type="submit">Přihlásit se</button>
+                                <button name="loginSubmit" class="btn btn-primary" type="submit">Přihlásit se</button>
                             </div>
                         </form>
                     </div>
