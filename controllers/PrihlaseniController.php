@@ -22,6 +22,10 @@ class PrihlaseniController implements IController
 
         if(isset($_POST["loginSubmit"])){
             $tplData['loginResult'] = $this->db->login();
+
+            if($tplData['loginResult'] === 0){
+                header("location: index.php?page=uvod");
+            }
         }
 
         ob_start();

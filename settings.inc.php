@@ -26,6 +26,8 @@ const DIRECTORY_MODELS = "models/";
 /** Adresar sablon */
 const DIRECTORY_VIEWS = "views/";
 
+const DIRECTORY_UPLOADS = "uploads/";
+
 /** Klic defaultni webove stranky. */
 const DEFAULT_WEB_PAGE_KEY = "uvod";
 
@@ -67,6 +69,15 @@ const WEB_PAGES = array(
         "class_name" => "OdhlaseniController",
     ),
 
+    "clanky" => array(
+
+        "title" => "Články",
+
+        //Kontroler
+        "file_name" => "ClankyController.php",
+        "class_name" => "ClankyController",
+    ),
+
     "pridaniclanku" => array(
 
         "title" => "Přidání článku",
@@ -74,6 +85,15 @@ const WEB_PAGES = array(
         //Kontroler
         "file_name" => "PridaniClankuController.php",
         "class_name" => "PridaniClankuController",
+    ),
+
+    "spravauzivatelu" => array(
+
+        "title" => "Správa uživatelů",
+
+        //Kontroler
+        "file_name" => "SpravaUzivateluController.php",
+        "class_name" => "SpravaUzivateluController",
     ),
 
 );
