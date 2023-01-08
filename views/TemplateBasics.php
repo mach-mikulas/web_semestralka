@@ -37,7 +37,7 @@ class TemplateBasics {
                 <ul class="nav nav-dark col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
                     <li><a href='index.php?page=uvod' class='nav-link px-2 link-secondary'>Úvod</a></li>
-
+                    <li><a href='index.php?page=clanky' class='nav-link px-2 link-secondary'>Články</a></li>
 
                     <?php
                         if(mySession::isActive('id')){

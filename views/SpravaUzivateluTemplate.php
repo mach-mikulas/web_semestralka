@@ -17,6 +17,8 @@ $tplHeaders->getHTMLHeader($tplData['title']);
     <br>
     <br>
 
+    <div class="container">
+
     <table class="table table-striped">
         <thead>
         <tr>
@@ -49,6 +51,8 @@ $tplHeaders->getHTMLHeader($tplData['title']);
 
                 ?>
                 <td><?php echo $radek['nazev'] ?></td>
+                <td></td>
+                <td></td>
                 <?php
 
             }else{
@@ -108,6 +112,7 @@ $tplHeaders->getHTMLHeader($tplData['title']);
 
         </tbody>
     </table>
+    </div>
 
 <?php
 $tplHeaders->getHTMLFooter();
