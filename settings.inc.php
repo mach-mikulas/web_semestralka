@@ -87,6 +87,15 @@ const WEB_PAGES = array(
         "class_name" => "PridaniClankuController",
     ),
 
+    "spravarecenzi" => array(
+
+        "title" => "Správa recenzí",
+
+        //Kontroler
+        "file_name" => "SpravaRecenziController.php",
+        "class_name" => "SpravaRecenziController",
+    ),
+
     "spravauzivatelu" => array(
 
         "title" => "Správa uživatelů",

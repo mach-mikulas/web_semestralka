@@ -7,6 +7,7 @@ class PridaniClankuModel extends DatabaseModel {
     public function upload(){
 
         $nazevClanku = htmlspecialchars($_POST["nazevClanku"]);
+        $abstraktClanek = htmlspecialchars($_POST["abstraktClanek"]);
 
         $fileName = basename($_FILES['souborClanku']["name"]);
         $fileTmpName = $_FILES["souborClanku"]["tmp_name"];
@@ -30,13 +31,14 @@ class PridaniClankuModel extends DatabaseModel {
         $fileDestination = DIRECTORY_UPLOADS.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
 
-        $sql = "INSERT INTO clanek(`uzivatel_ID_autor`, `nazev_clanku`, `nazev_souboru`) 
-                VALUES (:id, :nazev_clanku, :nazev_souboru)";
+        $sql = "INSERT INTO clanek(`uzivatel_ID_autor`, `nazev_clanku` , `abstrakt`, `nazev_souboru`) 
+                VALUES (:id, :nazev_clanku, :abstrakt, :nazev_souboru)";
 
         $query = $this->pdo->prepare($sql);
         $query->execute(array(
             "id" => mySession::get('id'),
             "nazev_clanku" => $nazevClanku,
+            "abstrakt" => $abstraktClanek,
             "nazev_souboru" => $fileNameNew,
 
         ));

@@ -56,7 +56,7 @@ class TemplateBasics {
                             elseif(mySession::get('vaha') == 3){
 
                                 echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
-                                echo "<li><a href='index.php?page=pridelenirecenzi' class='nav-link px-2 link-secondary'>Přidělení recenzí</a></li>";
+                                echo "<li><a href='index.php?page=spravarecenzi' class='nav-link px-2 link-secondary'>Správa recenzí</a></li>";
                                 echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Správa uživatelů</a></li>";
                             }
 
@@ -64,7 +64,7 @@ class TemplateBasics {
 
                                 echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
                                 echo "<li><a href='index.php?page=recenze' class='nav-link px-2 link-secondary'>Recenze</a></li>";
-                                echo "<li><a href='index.php?page=pridelenirecenzi' class='nav-link px-2 link-secondary'>Přidělení recenzí</a></li>";
+                                echo "<li><a href='index.php?page=spravarecenzi' class='nav-link px-2 link-secondary'>Správa recenzí</a></li>";
                                 echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Správa uživatelů</a></li>";
                             }
                         }

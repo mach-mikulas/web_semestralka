@@ -46,10 +46,18 @@ $tplHeaders->getHTMLHeader($tplData['title']);
 
                         <form method="post" enctype='multipart/form-data'>
 
+                            <label>Název článku</label>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" required="required" id="floatingInput" name="nazevClanku" placeholder="Název článku">
-                                <label for="floatingInput">Název článku</label>
+
                             </div>
+
+                            <label>Abstrakt</label>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" name="abstraktClanek" id="floatingTextArea" rows="4" required="required"></textarea>
+                            </div>
+
+
 
                             <input type="file" class="form-control" accept="application/pdf" name="souborClanku" required="required"/>
                             <label class="form-label" for="customFile">Vyberte článek ve formátu PDF</label>
