@@ -56,12 +56,6 @@ $tplHeaders->getHTMLHeader($tplData['title']);
                                 <label for="floatingPassword">Heslo</label>
                             </div>
 
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                                <label class="form-check-label" for="rememberPasswordCheck">
-                                    Zapamatovat heslo
-                                </label>
-                            </div>
                             <div class="d-grid">
                                 <button name="loginSubmit" class="btn btn-primary" type="submit">Přihlásit se</button>
                             </div>

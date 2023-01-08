@@ -60,6 +60,58 @@ class SpravaRecenziModel extends DatabaseModel{
 
     }
 
+    public function priraditRecenzi(){
+
+        $idRecenzent = htmlspecialchars($_POST['ID_recenzent']);
+        $idClanek = htmlspecialchars($_POST['ID_clanek']);
+
+        $sql = "INSERT INTO recenze(`clanek_ID_clanek`, `uzivatel_ID_recenzent`) 
+                VALUES ( :clanek_ID_clanek, :uzivatel_ID_recenzent)";
+
+
+
+        $query = $this->pdo->prepare($sql);
+        $query->execute(array(
+            'clanek_ID_clanek' => $idClanek,
+            'uzivatel_ID_recenzent' => $idRecenzent,
+        ));
+
+        $sql = "UPDATE clanek
+                SET pocet_recenzentu = pocet_recenzentu + 1
+                WHERE ID_clanek = :ID_clanek ";
+
+
+
+        $query = $this->pdo->prepare($sql);
+        $query->execute(array(
+            'ID_clanek' => $idClanek,
+        ));
+
+
+        return 0;
+
+    }
+
+    public function publikovatClanek(){
+
+        $idClanek = htmlspecialchars($_POST['ID_clanek']);
+
+
+        $sql = "UPDATE clanek
+                SET schvaleno = 1
+                WHERE ID_clanek = :ID_clanek";
+
+
+
+        $query = $this->pdo->prepare($sql);
+        $query->execute(array(
+            'ID_clanek' => $idClanek,
+        ));
+
+        return 0;
+
+    }
+
 }
 
 ?>

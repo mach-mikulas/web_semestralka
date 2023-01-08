@@ -21,6 +21,7 @@ class TemplateBasics {
             <link rel="stylesheet" href="responzivni.css">
             <!-- CSS only -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+            <link rel="icon" href="libs/webicon.png">
             <!-- JavaScript Bundle with Popper -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
@@ -44,28 +45,29 @@ class TemplateBasics {
 
                             if(mySession::get('vaha') == 1){
 
+                                echo "<li><a href='index.php?page=mojeclanky' class='nav-link px-2 link-secondary'>Moje články</a></li>";
                                 echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidat článek</a></li>";
+
                             }
 
                             if(mySession::get('vaha') == 2){
 
-                                echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
                                 echo "<li><a href='index.php?page=recenze' class='nav-link px-2 link-secondary'>Recenze</a></li>";
                             }
 
                             elseif(mySession::get('vaha') == 3){
 
-                                echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
                                 echo "<li><a href='index.php?page=spravarecenzi' class='nav-link px-2 link-secondary'>Správa recenzí</a></li>";
-                                echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Správa uživatelů</a></li>";
+                                echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Uživatelé</a></li>";
                             }
 
                             elseif(mySession::get('vaha') == 4){
 
+                                echo "<li><a href='index.php?page=mojeclanky' class='nav-link px-2 link-secondary'>Moje články</a></li>";
                                 echo "<li><a href='index.php?page=pridaniclanku' class='nav-link px-2 link-secondary'>Přidání článku</a></li>";
                                 echo "<li><a href='index.php?page=recenze' class='nav-link px-2 link-secondary'>Recenze</a></li>";
                                 echo "<li><a href='index.php?page=spravarecenzi' class='nav-link px-2 link-secondary'>Správa recenzí</a></li>";
-                                echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Správa uživatelů</a></li>";
+                                echo "<li><a href='index.php?page=spravauzivatelu' class='nav-link px-2 link-secondary'>Uživatelé</a></li>";
                             }
                         }
                     ?>
@@ -76,7 +78,7 @@ class TemplateBasics {
                     <?php
                         if(mySession::isActive('id')){
 
-                            echo mySession::get('login')." ".mySession::get('nazev');
+                            echo "<b>".mySession::get('login') . "</b>" . " (" .mySession::get('pravomoce') . ")";
 
                             ?>
 

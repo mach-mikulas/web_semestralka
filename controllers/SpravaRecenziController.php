@@ -28,7 +28,11 @@ class SpravaRecenziController implements IController
             }
 
             if(isset($_POST["publikovatClanekSubmit"])){
-                //$this->db->smazatClanek();
+                $this->db->publikovatClanek();
+            }
+
+            if(isset($_POST["priraditSubmit"])){
+                $this->db->priraditRecenzi();
             }
 
         }

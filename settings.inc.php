@@ -78,6 +78,15 @@ const WEB_PAGES = array(
         "class_name" => "ClankyController",
     ),
 
+    "mojeclanky" => array(
+
+        "title" => "Moje články",
+
+        //Kontroler
+        "file_name" => "MojeClankyController.php",
+        "class_name" => "MojeClankyController",
+    ),
+
     "pridaniclanku" => array(
 
         "title" => "Přidání článku",
@@ -85,6 +94,15 @@ const WEB_PAGES = array(
         //Kontroler
         "file_name" => "PridaniClankuController.php",
         "class_name" => "PridaniClankuController",
+    ),
+
+    "recenze" => array(
+
+        "title" => "Recenze",
+
+        //Kontroler
+        "file_name" => "RecenzeController.php",
+        "class_name" => "RecenzeController",
     ),
 
     "spravarecenzi" => array(
